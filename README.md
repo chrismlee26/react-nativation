@@ -1,4 +1,4 @@
-# React-Naviation
+# React-Navigation
 
 #### v0.0.1
 

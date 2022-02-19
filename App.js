@@ -26,7 +26,7 @@ function App() {
         }}
       >
         <Stack.Screen
-          name="MittensList v2"
+          name="Home"
           component={HomeScreen}
           options={{
             headerStyle: {
@@ -39,7 +39,6 @@ function App() {
             }
           }}
         />
-
         <Stack.Screen
           name="Details"
           component={DetailsScreen}

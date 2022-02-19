@@ -1,24 +1,21 @@
-import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
+import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import { cats } from '.././breeds'
+import Cell from './Cell'
 
 function HomeScreen({ navigation }) {
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => {
-          /* 1. Navigate to the Details route with params */
-          navigation.navigate('Details', {
-            itemId: 86,
-            otherParam: 'anything you want here',
-          });
+    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <FlatList
+        style={{ flex: 1, width: '100%' }}
+        data={cats}
+        renderItem={({ item, index }) => {
+          return <Cell title={item.breed} />
         }}
+        keyExtractor={(item) => item.breed}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

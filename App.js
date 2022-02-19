@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -11,11 +12,12 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
+      <StatusBar style="light" />
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#f4511e',
+            backgroundColor: '#143269',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -24,22 +26,24 @@ function App() {
         }}
       >
         <Stack.Screen
-          name="Home"
+          name="MittensList v2"
           component={HomeScreen}
           options={{
-            title: "Hello World",
             headerStyle: {
-              backgroundColor: '#f4511e'
+              backgroundColor: '#143269'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
               fontWeight: 'bold',
-              fontSize: 24
+              fontSize: 22
             }
           }}
         />
 
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -11,7 +11,12 @@ function HomeScreen({ navigation }) {
         style={{ flex: 1, width: '100%' }}
         data={cats}
         renderItem={({ item, index }) => {
-          return <Cell title={item.breed} />
+          return (
+            <Cell
+              title={item.breed}
+              showDetails={() => navigation.navigate('Details', { id: 1 })}
+            />
+          )
         }}
         keyExtractor={(item) => item.breed}
       />

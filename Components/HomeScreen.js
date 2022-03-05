@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, SafeAreaView, FlatList } from 'react-native';
-import { cats } from '.././breeds'
+import React from 'react';
+import { cats, dogs } from '.././breeds'
 import Cell from './Cell'
+import AnimalsList from './AnimalsList';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+
+const Tab = createBottomTabNavigator();
 
 function HomeScreen({ navigation }) {
 
   return (
-    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <FlatList
-        style={{ flex: 1, width: '100%' }}
-        data={cats}
-        renderItem={({ item, index }) => {
-          return (
-            <Cell
-              title={item.breed}
-              showDetails={() => navigation.navigate('Details', { item })}
-            />
-          )
-        }}
-        keyExtractor={(item) => item.breed}
+    <Tab.Navigator
+      screenOptions={() => ({
+        headerShown: false,
+        tabBarStyle: { backgroundColor: "tomato" },
+      })}
+    >
+      <Tab.Screen
+        name="Cats"
+        children={() => <AnimalsList breed={cats} navigation={navigation} />}
       />
-    </SafeAreaView>
+      <Tab.Screen
+        name="Dogs"
+        children={() => <AnimalsList breed={dogs} navigation={navigation} />}
+      />
+    </Tab.Navigator>
   );
 }
 

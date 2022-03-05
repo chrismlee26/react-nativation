@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import { cats } from '.././breeds'
 import Cell from './Cell'
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-function HomeScreen({ navigation }) {
+function SettingsScreen({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -25,4 +24,4 @@ function HomeScreen({ navigation }) {
   );
 }
 
-export default HomeScreen
+export default SettingsScreen

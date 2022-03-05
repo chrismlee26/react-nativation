@@ -16,7 +16,7 @@ function App() {
         initialRouteName="Home"
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#143269',
+            backgroundColor: '#F0F8FF',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -29,7 +29,7 @@ function App() {
           component={HomeScreen}
           options={{
             headerStyle: {
-              backgroundColor: '#143269'
+              backgroundColor: '#FFE4C4'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
